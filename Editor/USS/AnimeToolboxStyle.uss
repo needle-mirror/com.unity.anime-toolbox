@@ -1,0 +1,29 @@
+.anime-toolbox-header {
+    height: 30px;
+    -unity-text-align: middle-center;
+    background-color: ##565656;
+}
+
+.anime-toolbox-section-container {
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.anime-toolbox-item {
+    -unity-text-align: middle-left;
+    height: 30px;
+    padding-right: 15px;
+}
+
+
+/*------------------------------------------- UIElement Buttons----------------------------------------------------- */
+
+.anime-toolbox-button {
+    height: 30px;
+    min-width: 100px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+
+
