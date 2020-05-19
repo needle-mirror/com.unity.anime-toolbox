@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 [InitializeOnLoad]
 internal class AnimeToolbar   {

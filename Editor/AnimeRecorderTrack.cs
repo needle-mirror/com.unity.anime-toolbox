@@ -9,7 +9,7 @@ using UnityEditor.Timeline;
 using UnityEngine;
 using UnityEngine.Timeline;
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 internal class AnimeRecorderTrack : RecorderTrack
 {

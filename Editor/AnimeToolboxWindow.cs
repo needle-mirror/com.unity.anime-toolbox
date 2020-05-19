@@ -3,7 +3,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 internal class AnimeToolboxWindow : EditorWindow {
     [MenuItem("Window/General/Anime Toolbox")] 

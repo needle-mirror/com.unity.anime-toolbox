@@ -4,7 +4,7 @@ using UnityEditor.PackageManager;           //PackageCollection
 using System;                               //Action
 
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 
 /// <summary>

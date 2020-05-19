@@ -2,7 +2,7 @@
 using System.Reflection;
 using Type = System.Type;
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 internal static class LayoutUtility {
 

@@ -2,7 +2,7 @@
 using UnityEditor.PackageManager.Requests;  //Request<T>
 using UnityEditor.PackageManager;           //PackageInfo
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 internal class SearchAllRequestInfo {
     internal readonly bool OfflineMode;

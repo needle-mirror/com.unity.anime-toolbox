@@ -2,7 +2,7 @@
 using UnityEditor.PackageManager.Requests;  //ListRequest, AddRequest, etc
 using UnityEditor.PackageManager;           //PackageCollection
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 internal class ListRequestInfo {
     internal readonly bool OfflineMode;
     internal readonly bool IncludeIndirectIndependencies;

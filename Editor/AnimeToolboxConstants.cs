@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 internal static class AnimeToolboxConstants  {
     public const int TOOL_BUTTON_LENGTH = 32;

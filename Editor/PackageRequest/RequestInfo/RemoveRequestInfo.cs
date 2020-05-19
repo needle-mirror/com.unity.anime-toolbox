@@ -1,6 +1,6 @@
 ﻿using System;                               //Action
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 internal class RemoveRequestInfo{
     internal readonly string PackageName;
     internal readonly Action OnSuccessAction;

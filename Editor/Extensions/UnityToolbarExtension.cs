@@ -5,7 +5,7 @@ using System.Reflection;
 using UnityEngine.UIElements;
 
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 internal static class UnityToolbarExtension {
 
@@ -116,7 +116,7 @@ internal static class UnityToolbarExtension {
         if (null!= m_unityToolbar) {
             const string ON_GUI_HANDLER_FIELD = "m_OnGUIHandler";
 
-            Type guiViewType = typeof(Editor).Assembly.GetType("UnityEditor.GUIView");
+            Type guiViewType = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.GUIView");
             PropertyInfo visualTreeProperty = guiViewType.GetProperty("visualTree",
                 BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance
             );
@@ -164,7 +164,7 @@ internal static class UnityToolbarExtension {
     }
     
 //---------------------------------------------------------------------------------------------------------------------
-    static readonly Type TOOLBAR_TYPE = typeof(Editor).Assembly.GetType("UnityEditor.Toolbar");	
+    static readonly Type TOOLBAR_TYPE = typeof(UnityEditor.Editor).Assembly.GetType("UnityEditor.Toolbar");	
 
     static int m_toolCount;
     static GUIStyle m_commandLeftGUIStyle = null;

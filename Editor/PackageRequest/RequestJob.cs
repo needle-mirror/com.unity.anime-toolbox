@@ -2,7 +2,7 @@
 using UnityEditor.PackageManager;           //StatusCode
 using System;                               //Action
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 //---------------------------------------------------------------------------------------------------------------------
 //Non-generics version

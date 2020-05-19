@@ -3,7 +3,7 @@ using UnityEditor.PackageManager;       //PackageCollection
 using System.Collections.Generic;       //IEnumerable
 
 
-namespace Unity.AnimeToolbox {
+namespace Unity.AnimeToolbox.Editor {
 
 /// <summary>
 /// An extension class to extend the functionality of UnityEditor.PackageManager.Requests classes
