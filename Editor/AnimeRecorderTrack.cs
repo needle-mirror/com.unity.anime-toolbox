@@ -63,7 +63,7 @@ internal class AnimeRecorderTrack : RecorderTrack
             return null;
         }
 
-        GameViewInputSettings inputSettings = recorderSettings.imageInputSettings as GameViewInputSettings;
+        GameViewInputSettings inputSettings = recorderSettings.ImageInputSettings as GameViewInputSettings;
         if (null == inputSettings) {
             Debug.LogError("[AnimeToolbox] Failed in getting GameViewInputSettings");
             return null;
