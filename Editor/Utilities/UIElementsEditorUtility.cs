@@ -5,7 +5,10 @@ using UnityEngine.UIElements;
 
 namespace Unity.AnimeToolbox.Editor {
 
-internal class UIElementsEditorUtility {
+/// <summary>
+/// A utility class for executing operations related to UIElements
+/// </summary>
+public class UIElementsEditorUtility {
     
     /// <summary>
     /// Load a UXML file

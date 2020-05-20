@@ -2,7 +2,7 @@
   "displayName": "Anime Toolbox",
   "name": "com.unity.anime-toolbox",
   "unity": "2019.3",
-  "version": "0.1.1-preview",
+  "version": "0.1.2-preview",
   "dependencies": {
     "com.unity.recorder": "2.1.0-preview.1"
   },
@@ -12,11 +12,11 @@
     "Sindharta Tanuwijaya <sindharta.tanuwijaya@unity3d.com> (https://github.com/sindharta)"
   ],
   "upmCi": {
-    "footprint": "bfadf8fa2b28d937c7245e7e0f38b6bbdeac2131"
+    "footprint": "3ee13b294646d28f9ffb0b060ff1ceebffe50fce"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/Unity-Technologies/AnimeSolution.git",
-    "revision": "08a214b54c6c547e189543f0a95d2ebc74ad65a3"
+    "revision": "1fde5f2cc14aa8009424fdf747673bf1033305fd"
   }
 }

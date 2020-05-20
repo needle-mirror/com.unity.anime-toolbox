@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.2-preview] - 2020-05-20
+
+fix: open UIElementsEditorUtility to public	
+fix: Open PathUtility functions to public
+chore: rename runtime assembly to Unity.AnimeToolbox without Runtime
+test: add PathUtilityTest for testing PathUtility
+
 ## [0.1.1-preview] - 2020-05-20
 
 fix: change dependency of com.unity.recorder to version 2.1.0-preview.1

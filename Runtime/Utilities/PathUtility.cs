@@ -2,6 +2,9 @@
 
 namespace Unity.AnimeToolbox {
 
+/// <summary>
+/// A utility class for executing path-related operations
+/// </summary>
 public static class PathUtility {
 
     /// <summary>
@@ -10,7 +13,7 @@ public static class PathUtility {
     /// <param name="path">the base path</param>
     /// <param name="n">how many levels up</param>
     /// <returns>the directory name</returns>
-    internal static string GetDirectoryName(string path, int n = 1) {
+    public static string GetDirectoryName(string path, int n = 1) {
         if (string.IsNullOrEmpty(path) || n<1)
             return null;
 
