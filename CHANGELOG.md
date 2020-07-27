@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.1.4-preview] - 2020-07-27
+
+* make UIElementsUtility into a public class 
+
 ## [0.1.3-preview] - 2020-07-27
 
 * fix build error when building applications

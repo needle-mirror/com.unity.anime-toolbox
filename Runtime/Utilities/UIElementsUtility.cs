@@ -6,7 +6,7 @@ namespace Unity.AnimeToolbox {
 /// <summary>
 /// A utility class for performing operations related to UIElements
 /// </summary>
-internal static class UIElementsUtility  {
+public static class UIElementsUtility  {
     
 //----------------------------------------------------------------------------------------------------------------------
 	
