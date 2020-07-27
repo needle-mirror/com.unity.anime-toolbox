@@ -2,6 +2,7 @@
 using System.IO;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 namespace Unity.AnimeToolbox {
 
@@ -55,7 +56,11 @@ public static class FileUtility  {
     /// Deserialize a json file to an object
     /// </summary>
     /// <param name="path">The path to the json file</param>
-    public static T DeserializeFromJson<T>(string path) {
+    public static T DeserializeFromJson<T>(string path) where T: class {
+        if (!File.Exists(path)) {
+            return null;
+        }
+        
         string json = File.ReadAllText(path);
         return JsonUtility.FromJson<T>(json);
     }
@@ -69,9 +74,14 @@ public static class FileUtility  {
     ///     If false, format the output for minimum size. Default is false.
     /// </param>
     public static void SerializeToJson<T>(T obj, string path, bool prettyPrint=false) {
+        string dir = Path.GetDirectoryName(path);                
+        Assert.IsFalse(string.IsNullOrEmpty(dir));
+        Directory.CreateDirectory(dir);
+        
         string json = JsonUtility.ToJson(obj, prettyPrint);
         File.WriteAllText(path, json);
-    }
+    }    
+    
     #endregion
     
     

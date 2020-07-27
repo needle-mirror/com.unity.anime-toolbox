@@ -8,7 +8,7 @@ namespace Unity.AnimeToolbox.Editor {
 
 internal static class AnimeToolboxMenu 
 {
-    [MenuItem(AnimeToolboxConstants.MENU_ITEM + "/DownloadTemplate")]
+//    [MenuItem(AnimeToolboxConstants.MENU_ITEM + "/DownloadTemplate")]
     static void DownloadTemplate() {
 
         string templateName = "com.unity.anime-template";

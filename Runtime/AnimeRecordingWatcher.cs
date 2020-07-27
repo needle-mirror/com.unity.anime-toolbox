@@ -3,6 +3,8 @@ using UnityEngine.Playables;
 
 namespace Unity.AnimeToolbox {
 
+#if UNITY_EDITOR
+
 internal class AnimeRecordingWatcher : MonoBehaviour {
 
 
@@ -30,5 +32,6 @@ internal class AnimeRecordingWatcher : MonoBehaviour {
     static PlayableDirector[] m_activePlayableDirectors = null;
 }
 
+#endif //UNITY_EDITOR
 
 } //End namespace
