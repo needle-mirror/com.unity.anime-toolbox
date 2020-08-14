@@ -1,5 +1,8 @@
 # Changelog
 
+## [0.1.5-preview] - 2020-08-14
+* fix: remove obsolete/unsupported tracks from the menu
+
 ## [0.1.4-preview] - 2020-07-27
 
 * make UIElementsUtility into a public class 

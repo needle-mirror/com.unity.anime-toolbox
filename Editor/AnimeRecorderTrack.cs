@@ -11,7 +11,7 @@ using UnityEngine.Timeline;
 
 namespace Unity.AnimeToolbox.Editor {
 
-internal class AnimeRecorderTrack : RecorderTrack
+[HideInMenu] internal class AnimeRecorderTrack : RecorderTrack
 {
 
     public void Init(double duration) {
