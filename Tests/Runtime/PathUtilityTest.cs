@@ -1,4 +1,4 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
 
@@ -51,13 +51,13 @@ internal class PathUtilityTest
 
         string dirName = null;
         dirName = PathUtility.GetDirectoryName("/home/Unity/Unity 2019/Unity", 1);
-        Assert.AreEqual("/Applications/Unity 2019", dirName);
+        Assert.AreEqual("/home/Unity/Unity 2019", dirName);
         dirName = PathUtility.GetDirectoryName("/home/Unity/Unity 2019/bin/Unity", 2);
-        Assert.AreEqual("/Applications/Unity 2019", dirName);
+        Assert.AreEqual("/home/Unity/Unity 2019", dirName);
         
         //Null checks
         dirName = PathUtility.GetDirectoryName("/home/Unity/Unity 2019/Unity", 4);
-        Assert.IsNull(dirName);
+        Assert.AreEqual("/", dirName);
         dirName = PathUtility.GetDirectoryName(null);
         Assert.IsNull(dirName);
         

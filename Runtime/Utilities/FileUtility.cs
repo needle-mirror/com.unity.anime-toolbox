@@ -36,9 +36,10 @@ public static class FileUtility  {
     
     
     /// <summary>
-    /// Compute the MD5 code of a file
+    /// Compute the MD5 hash code of a file
     /// </summary>
     /// <param name="path">The path to file</param>
+    /// <returns>The MD5 hash code of the file</returns>
     public static string ComputeFileMD5(string path) {
         using (MD5 md5 = MD5.Create()) {
             using (FileStream stream = File.OpenRead(path)) {
@@ -56,6 +57,8 @@ public static class FileUtility  {
     /// Deserialize a json file to an object
     /// </summary>
     /// <param name="path">The path to the json file</param>
+    /// <typeparam name="T">The type of the object inside the json file</typeparam>
+    /// <returns>The deserialized object with type T</returns>
     public static T DeserializeFromJson<T>(string path) where T: class {
         if (!File.Exists(path)) {
             return null;
@@ -73,6 +76,7 @@ public static class FileUtility  {
     /// <param name="prettyPrint">If true, format the output for readability.
     ///     If false, format the output for minimum size. Default is false.
     /// </param>
+    /// <typeparam name="T">The type of the object</typeparam>
     public static void SerializeToJson<T>(T obj, string path, bool prettyPrint=false) {
         string dir = Path.GetDirectoryName(path);                
         Assert.IsFalse(string.IsNullOrEmpty(dir));
@@ -91,6 +95,7 @@ public static class FileUtility  {
     /// Delete files and folders under the passed directory
     /// </summary>
     /// <param name="path">The path to directory to be deleted</param>
+    /// <returns>True if deletion is successful, false otherwise</returns>
     public static bool DeleteFilesAndFolders(string path) {
         return FileUtility.DeleteFilesAndFolders(new DirectoryInfo(path));        
     }
@@ -101,6 +106,7 @@ public static class FileUtility  {
     /// Delete files and folders under the passed directory
     /// </summary>
     /// <param name="di">The DirectoryInfo of the directory to be deleted</param>
+    /// <returns>True if deletion is successful, false otherwise</returns>
     public static bool DeleteFilesAndFolders(DirectoryInfo di) {
         //Try to delete the internal contents of the directory 
         try {

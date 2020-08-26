@@ -34,7 +34,6 @@ public class UIElementsEditorUtility {
     /// <param name="set">StyleSheetSet to which the new StyleSheet will be added</param>
     /// <param name="pathWithoutExt">Path to the file without the extension</param>
     /// <param name="ext">The extension of the file. Assumed to be ".uss" </param>
-    /// <returns></returns>
     public static void LoadAndAddStyle(VisualElementStyleSheetSet set, string pathWithoutExt, string ext = ".uss") {
         string path = pathWithoutExt + ext;
         StyleSheet asset = AssetDatabase.LoadAssetAtPath<StyleSheet>(path);
