@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 namespace Unity.AnimeToolbox.Editor {
 
 /// <summary>
-/// A utility class for executing operations related to UIElements
+/// A utility class for executing operations related to UIElements.
 /// </summary>
 public class UIElementsEditorUtility {
     

@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 namespace Unity.AnimeToolbox {
 
 /// <summary>
-/// A utility class for performing operations related to UIElements
+/// A utility class for performing operations related to UIElements.
 /// </summary>
 public static class UIElementsUtility  {
     

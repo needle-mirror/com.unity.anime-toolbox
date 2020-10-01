@@ -3,12 +3,14 @@
 namespace Unity.AnimeToolbox {
 
 /// <summary>
-/// A utility class for executing path-related operations
+/// A utility class for executing path-related operations.
 /// </summary>
 public static class PathUtility {
 
     /// <summary>
-    /// Get directory name n-levels up as specified by the parameter
+    /// Get the directory name of the path n-levels up 
+    /// Ex: n=1. Assets/Scripts/Foo.cs => Assets/Scripts
+    ///     n=2. Assets/Scripts/Foo.cs => Assets
     /// </summary>
     /// <param name="path">the base path</param>
     /// <param name="n">how many levels up</param>

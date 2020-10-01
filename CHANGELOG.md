@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.2.0-preview] - 2020-10-1
+
+* feat: add utility functions from StreamingImageSequence
+* feat: add utility functions from MeshSync (AssetUtility, AssetEditorUtility, EditorGUIDrawerUtility) 
+* chore: delete unused legacy functions
+* chore: test com.unity.anime-toolbox against Unity 2020 and 2021
+* chore: remove dependency to recorder. No longer required.
+* chore: use new Yamato conf template and reapply the existing settings
+* fix: package warnings
+* doc: add package badge in the top readme
+
+
 ## [0.1.6-preview] - 2020-08-26
 
 * fix: fix test code on Linux

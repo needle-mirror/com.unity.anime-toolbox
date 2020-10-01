@@ -7,7 +7,7 @@ using UnityEngine.Assertions;
 namespace Unity.AnimeToolbox {
 
 /// <summary>
-/// A utility class to do file operations
+/// A utility class to do file operations.
 /// </summary>
 public static class FileUtility  {
 
