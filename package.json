@@ -2,17 +2,17 @@
   "displayName": "Anime Toolbox",
   "name": "com.unity.anime-toolbox",
   "unity": "2019.4",
-  "version": "0.2.0-preview",
+  "version": "0.2.1-preview",
   "description": "A package containing various tools and utility scripts to support anime production workflow",
   "contributors": [
     "Sindharta Tanuwijaya <sindharta.tanuwijaya@unity3d.com> (https://github.com/sindharta)"
   ],
   "upmCi": {
-    "footprint": "ec2d28b75c4b83891f66e34332d5a8542fc970d1"
+    "footprint": "222919f27d43e9621c631923f38dc08340db3823"
   },
   "repository": {
     "url": "https://github.com/Unity-Technologies/AnimeSolution.git",
     "type": "git",
-    "revision": "2bca5b5ccd0ad9150ef2920c389c1bf146349371"
+    "revision": "6484a5c8ab8bde1ee4c15f4680d1e802a78e5492"
   }
 }

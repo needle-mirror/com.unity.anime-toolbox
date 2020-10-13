@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 namespace Unity.AnimeToolbox.Editor {
 
 internal class AnimeToolboxWindow : EditorWindow {
-    [MenuItem("Window/General/Anime Toolbox")] 
+    //[MenuItem("Window/General/Anime Toolbox")] 
     public static void ShowAnimeToolboxWindow() {
         AnimeToolboxWindow window = GetWindow<AnimeToolboxWindow>();
         window.titleContent = new GUIContent("Anime Toolbox");

@@ -1,5 +1,9 @@
 # Changelog
 
+## [0.2.1-preview] - 2020-10-13
+
+* chore: remove unsupported/unused window
+
 ## [0.2.0-preview] - 2020-10-1
 
 * feat: add utility functions from StreamingImageSequence
