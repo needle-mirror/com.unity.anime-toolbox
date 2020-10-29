@@ -32,6 +32,28 @@ public static class PathUtility {
 
     }
     
+//----------------------------------------------------------------------------------------------------------------------
+
+    /// <summary>
+    /// Generate a unique folder by trying with the passed parameter as the first candidate.
+    /// "/foo/bar": will generate "/foo/bar" if the directory didn't exist.
+    /// "/foo/bar": will generate "/foo/bar 1"" if the directory already existed.
+    /// </summary>
+    /// <param name="folder">The first candidate of the folder to create</param>
+    /// <returns>The path to the created folder</returns>
+    public static string GenerateUniqueFolder(string folder) {
+        string baseFolder = folder;
+        int    index      = 1;
+        while (Directory.Exists(folder)) {
+            folder = $"{baseFolder} {index.ToString()}";
+            ++index;
+        }
+                
+        Directory.CreateDirectory(folder);
+        return folder;
+    }
+    
+    
 }
 
 }

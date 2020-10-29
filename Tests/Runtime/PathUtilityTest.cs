@@ -1,3 +1,4 @@
+using System.IO;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
@@ -59,9 +60,29 @@ internal class PathUtilityTest
         dirName = PathUtility.GetDirectoryName("/home/Unity/Unity 2019/Unity", 4);
         Assert.AreEqual("/", dirName);
         dirName = PathUtility.GetDirectoryName(null);
-        Assert.IsNull(dirName);
-        
+        Assert.IsNull(dirName);        
     }
+    
+    
+//----------------------------------------------------------------------------------------------------------------------
+    [Test]
+    public void GenerateUniqueFolder() {
+        string    path     = Path.Combine(Application.streamingAssetsPath, "GenerateUniqueFolderTest");
+        const int NUM_GENS = 10;
+        for (int i = 0; i < NUM_GENS; ++i) {
+            PathUtility.GenerateUniqueFolder(path);            
+        }
+        
+        Assert.IsTrue(Directory.Exists(Path.Combine(Application.streamingAssetsPath, "GenerateUniqueFolderTest")));
+        for (int i = 1; i < NUM_GENS; ++i) {
+            string uniquePath = Path.Combine(Application.streamingAssetsPath, $"GenerateUniqueFolderTest {i}");
+            Assert.IsTrue(Directory.Exists(uniquePath));
+            Directory.Delete(uniquePath);
+        }
+        
+        Directory.Delete(path);
+    }
+    
 }
     
 } //end namespace

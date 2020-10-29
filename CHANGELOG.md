@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0-preview] - 2020-10-29
+
+* feat: add ObjectExtensions, RenderTextureExtensions, Texture2DExtensions classes 
+* feat: add PathUtility::GenerateUniqueFolder() utility function
+* feat: add a notifier to notify users to restart Unity after script compilation
+
+
 ## [0.2.1-preview] - 2020-10-13
 
 * chore: remove unsupported/unused window
