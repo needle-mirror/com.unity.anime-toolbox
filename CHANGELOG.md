@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.3.1-preview] - 2020-12-14
+
+* chore: include UIElements as a dependency of AnimeToolbox
+* chore: cleanup internal functions 
+
 ## [0.3.0-preview] - 2020-10-29
 
 * feat: add ObjectExtensions, RenderTextureExtensions, Texture2DExtensions classes 
