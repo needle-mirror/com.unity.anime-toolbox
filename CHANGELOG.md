@@ -1,5 +1,10 @@
 # Changelog
 
+## [0.4.0-preview] - 2020-1-8
+
+* feat: add a PackageVersion class to parse package version (semver) 
+* chore: change the class names of PackageRequest related classes
+
 ## [0.3.1-preview] - 2020-12-14
 
 * chore: include UIElements as a dependency of AnimeToolbox

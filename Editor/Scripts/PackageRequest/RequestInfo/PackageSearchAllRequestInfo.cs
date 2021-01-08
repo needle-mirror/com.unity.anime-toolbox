@@ -4,12 +4,12 @@ using UnityEditor.PackageManager;           //PackageInfo
 
 namespace Unity.AnimeToolbox.Editor {
 
-internal class SearchAllRequestInfo {
+internal class PackageSearchAllRequestInfo {
     internal readonly bool OfflineMode;
     internal readonly Action<Request<PackageInfo[]>> OnSuccessAction;
     internal readonly Action<Request<PackageInfo[]>> OnFailAction;
 
-    internal SearchAllRequestInfo(bool offlineMode, 
+    internal PackageSearchAllRequestInfo(bool offlineMode, 
         Action<Request<PackageInfo[]>> onSuccess, Action<Request<PackageInfo[]>> onFail)
     {
         OfflineMode = offlineMode;

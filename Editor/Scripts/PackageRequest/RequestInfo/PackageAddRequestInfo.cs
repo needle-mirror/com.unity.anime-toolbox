@@ -4,11 +4,11 @@ using UnityEditor.PackageManager;           //PackageInfo
 
 namespace Unity.AnimeToolbox.Editor {
 
-internal class AddRequestInfo {
+internal class PackageAddRequestInfo {
     internal readonly string PackageName;
     internal readonly Action<Request<PackageInfo>> OnSuccessAction;
     internal readonly Action<Request<PackageInfo>> OnFailAction;
-    internal AddRequestInfo(string packageName,
+    internal PackageAddRequestInfo(string packageName,
         Action<Request<PackageInfo>> onSuccess, Action<Request<PackageInfo>> onFail)
     {
         PackageName = packageName;

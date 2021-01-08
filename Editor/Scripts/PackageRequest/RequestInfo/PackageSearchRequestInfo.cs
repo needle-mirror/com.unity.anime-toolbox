@@ -4,13 +4,13 @@ using UnityEditor.PackageManager;           //PackageInfo
 
 namespace Unity.AnimeToolbox.Editor {
     
-internal class SearchRequestInfo {
+internal class PackageSearchRequestInfo {
     internal readonly string PackageName;
     internal readonly bool OfflineMode;
     internal readonly Action<Request<PackageInfo[]>> OnSuccessAction;
     internal readonly Action<Request<PackageInfo[]>> OnFailAction;
 
-    internal SearchRequestInfo(string packageName, bool offlineMode,
+    internal PackageSearchRequestInfo(string packageName, bool offlineMode,
         Action<Request<PackageInfo[]>> onSuccess, Action<Request<PackageInfo[]>> onFail)
     {
         PackageName = packageName;

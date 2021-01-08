@@ -11,7 +11,7 @@ namespace Unity.AnimeToolbox.Editor {
 /// An editor class to manage requests to UnityEditor.PackageManager.Client
 /// This class will perform its operations in background while Unity is running.
 /// </summary>
-public static class RequestJobManager 
+public static class PackageRequestJobManager 
 {
     [UnityEditor.InitializeOnLoadMethod]
     static void OnLoad() {    
@@ -37,7 +37,7 @@ public static class RequestJobManager
     public static void CreateListRequest(bool offlineMode, bool includeIndirectIndependencies,
        Action<Request<PackageCollection>> onSuccess, Action<Request<PackageCollection>> onFail)
     {
-        m_pendingListRequests.Enqueue(new ListRequestInfo(offlineMode, includeIndirectIndependencies, onSuccess, onFail));
+        m_pendingListRequests.Enqueue(new PackageListRequestInfo(offlineMode, includeIndirectIndependencies, onSuccess, onFail));
     }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ public static class RequestJobManager
     public static void CreateAddRequest(string packageName,
         Action<Request<PackageInfo>> onSuccess, Action<Request<PackageInfo>> onFail)
     {
-        m_pendingAddRequests.Enqueue(new AddRequestInfo(packageName, onSuccess, onFail));
+        m_pendingAddRequests.Enqueue(new PackageAddRequestInfo(packageName, onSuccess, onFail));
     }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -67,7 +67,7 @@ public static class RequestJobManager
     /// 
     public static void CreateRemoveRequest(string packageName, Action onSuccess, Action onFail)
     {
-        m_pendingRemoveRequests.Enqueue(new RemoveRequestInfo(packageName, onSuccess, onFail));
+        m_pendingRemoveRequests.Enqueue(new PackageRemoveRequestInfo(packageName, onSuccess, onFail));
     }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -86,7 +86,7 @@ public static class RequestJobManager
     public static void CreateSearchRequest(string packageName, bool offlineMode,
         Action<Request<PackageInfo[]>> onSuccess, Action<Request<PackageInfo[]>> onFail)
     {
-        m_pendingSearchRequests.Enqueue(new SearchRequestInfo(packageName, offlineMode, onSuccess, onFail));
+        m_pendingSearchRequests.Enqueue(new PackageSearchRequestInfo(packageName, offlineMode, onSuccess, onFail));
     }
 
 //---------------------------------------------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ public static class RequestJobManager
     public static void CreateSearchAllRequest(bool offlineMode,
         Action<Request<PackageInfo[]>> onSuccess, Action<Request<PackageInfo[]>> onFail)
     {
-        m_pendingSearchAllRequests.Enqueue(new SearchAllRequestInfo(offlineMode, onSuccess, onFail));
+        m_pendingSearchAllRequests.Enqueue(new PackageSearchAllRequestInfo(offlineMode, onSuccess, onFail));
     }
    
 //---------------------------------------------------------------------------------------------------------------------   
@@ -114,7 +114,7 @@ public static class RequestJobManager
         //Process pending list requests
         using (var enumerator = m_pendingListRequests.GetEnumerator()) {
             while (enumerator.MoveNext()) {
-                ListRequestInfo info = enumerator.Current;
+                PackageListRequestInfo info = enumerator.Current;
                 if (null == info)
                     continue;
                 ListRequest listReq = Client.List(info.OfflineMode, info.IncludeIndirectIndependencies);
@@ -126,7 +126,7 @@ public static class RequestJobManager
         //Process pending add requests
         using (var enumerator = m_pendingAddRequests.GetEnumerator()) {   
             while (enumerator.MoveNext()) {
-                AddRequestInfo info = enumerator.Current;
+                PackageAddRequestInfo info = enumerator.Current;
                 if (null == info)
                     continue;
                 AddRequest addReq = Client.Add(info.PackageName);
@@ -139,7 +139,7 @@ public static class RequestJobManager
         using (var enumerator = m_pendingRemoveRequests.GetEnumerator()) 
         {   
             while (enumerator.MoveNext()) {
-                RemoveRequestInfo info = enumerator.Current;
+                PackageRemoveRequestInfo info = enumerator.Current;
                 if (null == info)
                     continue;
                 RemoveRequest removeReq = Client.Remove(info.PackageName);
@@ -152,7 +152,7 @@ public static class RequestJobManager
         using (var enumerator = m_pendingSearchRequests.GetEnumerator()) 
         {   
             while (enumerator.MoveNext()) {
-                SearchRequestInfo info = enumerator.Current;
+                PackageSearchRequestInfo info = enumerator.Current;
                 if (null == info)
                     continue;
                 SearchRequest searchReq = Client.Search(info.PackageName, info.OfflineMode);
@@ -164,7 +164,7 @@ public static class RequestJobManager
         //Process pending SearchAllRequests
         using (var enumerator = m_pendingSearchAllRequests.GetEnumerator()) { 
             while (enumerator.MoveNext()) {
-                SearchAllRequestInfo info = enumerator.Current;
+                PackageSearchAllRequestInfo info = enumerator.Current;
                 if (null == info)
                     continue;
                 SearchRequest searchReq = Client.SearchAll(info.OfflineMode);
@@ -199,11 +199,11 @@ public static class RequestJobManager
 
 //---------------------------------------------------------------------------------------------------------------------
 
-    static readonly Queue<ListRequestInfo> m_pendingListRequests = new Queue<ListRequestInfo>();
-    static readonly Queue<AddRequestInfo>  m_pendingAddRequests = new Queue<AddRequestInfo>();
-    static readonly Queue<RemoveRequestInfo>  m_pendingRemoveRequests = new Queue<RemoveRequestInfo>();
-    static readonly Queue<SearchRequestInfo>  m_pendingSearchRequests = new Queue<SearchRequestInfo>();
-    static readonly Queue<SearchAllRequestInfo>  m_pendingSearchAllRequests = new Queue<SearchAllRequestInfo>();
+    static readonly Queue<PackageListRequestInfo> m_pendingListRequests = new Queue<PackageListRequestInfo>();
+    static readonly Queue<PackageAddRequestInfo>  m_pendingAddRequests = new Queue<PackageAddRequestInfo>();
+    static readonly Queue<PackageRemoveRequestInfo>  m_pendingRemoveRequests = new Queue<PackageRemoveRequestInfo>();
+    static readonly Queue<PackageSearchRequestInfo>  m_pendingSearchRequests = new Queue<PackageSearchRequestInfo>();
+    static readonly Queue<PackageSearchAllRequestInfo>  m_pendingSearchAllRequests = new Queue<PackageSearchAllRequestInfo>();
 
     static readonly HashSet<IRequestJob> m_requestJobs = new HashSet<IRequestJob>();
     static readonly List<IRequestJob> m_jobsToDelete = new List<IRequestJob>();
